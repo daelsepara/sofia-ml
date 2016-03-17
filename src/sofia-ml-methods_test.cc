@@ -16,6 +16,7 @@
 //
 #include <assert.h>
 #include <iostream>
+#include <cstdlib>
 
 #include "sofia-ml-methods.h"
 
@@ -53,7 +54,7 @@ int main (int argc, char** argv) {
   data_set_2.AddVector("-1 1:-1.0 2:-1.0");
   SfWeightVector pegasos_5(3);
   
-  srand(100);
+  std::srand(100);
   sofia_ml::StochasticOuterLoop(data_set_2,
 				sofia_ml::PEGASOS,
 				sofia_ml::PEGASOS_ETA,

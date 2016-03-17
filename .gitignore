@@ -1,0 +1,9 @@
+# ignore compiled binaries
+sofia-ml
+src/sf-data-set_test
+src/sf-hash-inline_test
+src/sf-sparse-vector_test
+src/sf-weight-vector_test
+src/simple-cmd-line-helper_test
+src/sofia-ml
+src/sofia-ml-methods_test

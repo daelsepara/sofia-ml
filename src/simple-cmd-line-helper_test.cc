@@ -35,9 +35,9 @@ int main (int argc, char** argv) {
   AddFlag("--ask", "should we ask people stuff?", bool(false));
 
   // Fill in dummy data for testing.
-  char* cmdline[8] = { "./a.out", "--name", "no-name", "--number", "1",
+  const char* cmdline[8] = { "./a.out", "--name", "no-name", "--number", "1",
 			  "--frac", "0.5", "--ask"};
-  argv = cmdline;
+  argv = const_cast<char **>(cmdline);
   argc = 8;
 
   ParseFlags(argc, argv);

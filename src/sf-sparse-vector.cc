@@ -141,7 +141,9 @@ void SfSparseVector::Init(const char* in_string) {
     position = strchr(position, ':') + 1;
     const char* end = strchr(position, ' ');
     char group_id_c_string[1000];
-    strncpy(group_id_c_string, position, end - position);
+    int len_ = strlen(position) - strlen(end);
+    strncpy(group_id_c_string, position, len_);
+    group_id_c_string[len_] = '\0';
     group_id_ = group_id_c_string;
     position = end + 1;
   } 
