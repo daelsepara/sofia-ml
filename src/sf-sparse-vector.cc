@@ -138,14 +138,20 @@ void SfSparseVector::Init(const char* in_string) {
   position = strchr(in_string, ' ') + 1;
   if ((position[0] >= 'a' && position[0] <= 'z') ||
       (position[0] >= 'A' && position[0] <= 'Z')) {
+
     position = strchr(position, ':') + 1;
+
     const char* end = strchr(position, ' ');
     char group_id_c_string[1000];
-    int len_ = strlen(position) - strlen(end);
-    strncpy(group_id_c_string, position, len_);
-    group_id_c_string[len_] = '\0';
-    group_id_ = group_id_c_string;
-    position = end + 1;
+    int position_ = strlen(position);
+    int end_ = strlen(end);
+    if (position_ >= 0 && end_ >=0 && position_ >= end_) {
+		int len_ = position_ - end_;
+		strncpy(group_id_c_string, position, len_);
+		group_id_c_string[len_] = '\0';
+		group_id_ = group_id_c_string;
+		position = end + 1;
+	}
   } 
 
   // Get feature:value pairs.
