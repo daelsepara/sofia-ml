@@ -342,7 +342,7 @@ int main (int argc, char** argv) {
 	cluster_centers->SqDistanceToClosestCenter(test_data->VectorAt(i),
 						   &closest_center);
 	assignment_stream << closest_center << "\t" 
-			  << test_data->VectorAt(i).GetY() << std::endl;
+			  << (int)test_data->VectorAt(i).GetY() << std::endl;
       }
       assignment_stream.close();
     }
