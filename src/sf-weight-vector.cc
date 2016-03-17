@@ -100,7 +100,7 @@ SfWeightVector::SfWeightVector(const SfWeightVector& weight_vector) {
 }
 
 SfWeightVector::~SfWeightVector() {
-  delete[] weights_;
+	delete[] weights_;
 }
 
 string SfWeightVector::AsString() {

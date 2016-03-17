@@ -28,6 +28,7 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+#include <memory>
 
 #include "sf-hash-weight-vector.h"
 #include "sofia-ml-methods.h"
@@ -149,6 +150,7 @@ void SaveModelToFile(const string& file_name, SfWeightVector* w) {
 void LoadModelFromFile(const string& file_name, SfWeightVector** w) {
   if (*w != NULL) {
     delete *w;
+    *w = NULL;
   }
 
   std::fstream model_stream;
@@ -295,7 +297,7 @@ int main (int argc, char** argv) {
   }
 
   // Set up empty model with specified dimensionality.
-  SfWeightVector* w  = NULL;
+  SfWeightVector* w;
   if (CMD_LINE_INTS["--hash_mask_bits"] == 0) {
     w = new SfWeightVector(CMD_LINE_INTS["--dimensionality"]);
   } else {

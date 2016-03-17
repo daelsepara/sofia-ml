@@ -58,7 +58,6 @@ SfHashWeightVector::SfHashWeightVector(int hash_mask_bits,
 }
 
 SfHashWeightVector::~SfHashWeightVector() {
-  delete[] weights_;
 }
 
 float SfHashWeightVector::InnerProduct(const SfSparseVector& x,
