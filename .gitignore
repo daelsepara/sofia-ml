@@ -10,7 +10,9 @@ src/sofia-ml-methods_test
 cluster-src/sf-cluster-centers_test
 cluster-src/sf-kmeans-methods_test
 cluster-src/sofia-kmeans
+demo/model
 demo/assignments.txt
 demo/clusters.txt
 demo/mapped_test_data.txt
+demo/results.txt
 sofia-kmeans
