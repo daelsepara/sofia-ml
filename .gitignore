@@ -7,3 +7,10 @@ src/sf-weight-vector_test
 src/simple-cmd-line-helper_test
 src/sofia-ml
 src/sofia-ml-methods_test
+cluster-src/sf-cluster-centers_test
+cluster-src/sf-kmeans-methods_test
+cluster-src/sofia-kmeans
+demo/assignments.txt
+demo/clusters.txt
+demo/mapped_test_data.txt
+sofia-kmeans

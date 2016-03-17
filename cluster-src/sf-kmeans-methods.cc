@@ -34,16 +34,16 @@ namespace sofia_cluster {
   // ---------------------------------------------------
 
   int RandInt(int num_vals) {
-    return static_cast<int>(rand()) % num_vals;
+    return static_cast<int>(std::rand()) % num_vals;
   }
 
   float RandFloat() {
-    return static_cast<float>(rand() / static_cast<float>(RAND_MAX));
+    return static_cast<float>(std::rand() / static_cast<float>(RAND_MAX));
   }
 
   const SfSparseVector& RandomExample(const SfDataSet& data_set) {
     int num_examples = data_set.NumExamples();
-    int i = static_cast<int>(rand()) % num_examples;
+    int i = static_cast<int>(std::rand()) % num_examples;
     if (i < 0) {
       i += num_examples;
     }
